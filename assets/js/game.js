@@ -3,14 +3,12 @@ var playerHealth = 100;
 var playerAttack = 10;
 var playerMoney = 10;
 
-// You can also log multiple values at once like this
-console.log(playerName, playerAttack, playerHealth);
-
+var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"];
 var enemyName = "Roborto";
 var enemyHealth = 50;
 var enemyAttack = 12;
 
-var fight = function() {
+var fight = function(enemyName) {
 
     // Alert players that they are starting the round
 
@@ -60,7 +58,7 @@ if (promptFight === "fight" || promptFight === "FIGHT") {
 
     // if yes (true), leave fight
     if (confirmSkip) {
-      window.alert(playerName + "has decided to skip this fight. Goodbye!");
+      window.alert(playerName + " has decided to skip this fight. Goodbye!");
       // subtract money from playerMoney for skipping
       playerMoney = playerMoney - 2;
     }
@@ -68,4 +66,8 @@ if (promptFight === "fight" || promptFight === "FIGHT") {
     else {
       fight();
     }
+    }
   }
+for(var i = 0; i < enemyNames.length; i++) {
+  fight(enemyNames[i]);
+}
